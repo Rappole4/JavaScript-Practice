@@ -41,3 +41,21 @@ function basicOp(operation, value1, value2)
   }
 }
 //end
+
+// heads and legs
+function animals(heads, legs){
+  var Cows = ((legs/2)-heads);
+  var Chickens = (heads - Cows);
+  if ((heads < 0)||(legs < 0)){
+  return 'No solutions';
+  }
+  else if ((Cows < 0)||(Chickens < 0)){
+  return 'No solutions';
+  }
+  else if ((Cows % 1 !== 0)||(Chickens % 1 !== 0)){
+  return 'No solutions';
+  }
+  else {
+  return [Chickens, Cows];
+  }
+  //
