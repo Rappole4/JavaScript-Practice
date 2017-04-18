@@ -25,7 +25,8 @@ function find_difference(a, b) {
   else {
   return (B - A);
   }
-}// end
+}
+// end
 
 // basic mathematical operations
 function basicOp(operation, value1, value2)
@@ -58,4 +59,16 @@ function animals(heads, legs){
   else {
   return [Chickens, Cows];
   }
-  //
+ }
+// other answer
+function animals(heads, legs){
+  var Cows = ((legs/2)-heads);
+  var Chickens = (heads - Cows);
+  if ((legs < heads < 0)||(Cows < 0)||(Chickens < 0)||(Cows % 1 !== 0)){
+  return 'No solutions';
+  }
+  else {
+  return [Chickens, Cows];
+  }
+}
+// end
