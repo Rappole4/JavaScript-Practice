@@ -94,3 +94,4 @@ function all( arr, fun ){
 }
 // end
 
+
