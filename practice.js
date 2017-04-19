@@ -72,3 +72,10 @@ function animals(heads, legs){
   }
 }
 // end
+
+// remove string spaces
+function noSpace(x){
+  return x.replace(/ /g,'')
+}
+//end
+
