@@ -79,3 +79,18 @@ function noSpace(x){
 }
 //end
 
+// Enumerable Magic #1 - True for All?
+function all( arr, fun ) {
+  for(i = 0; i < arr.length; i++) {
+    if(!fun(arr[i])) {
+      return false;
+    }
+  }
+  return true;
+}
+// other answer
+function all( arr, fun ){
+  return arr.every(fun)
+}
+// end
+
