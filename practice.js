@@ -2,11 +2,12 @@
 function invert(array) {
 for (i=0; i<array.length; i++){
   array[i] *= (-1);
+    if (array[i] == -0){
+    array[i] = 0;
+    }
   }
    return array;
 }
-
-invert([0 , -32 , 66]);
 // end
 
 // string cleaning
@@ -94,4 +95,33 @@ function all( arr, fun ){
 }
 // end
 
-
+// Rock Paper Scissors!
+const rps = (p1, p2) => {
+  if((p1 == 'rock')&&(p2 == 'scissors')){
+  return 'Player 1 won!'
+  }
+  else if((p1 == 'scissors')&&(p2 == 'paper')){
+  return 'Player 1 won!'
+  }
+  else if((p1 == 'paper')&&(p2 == 'rock')){
+  return 'Player 1 won!'
+  }
+  else if (p1===p2){
+  return 'Draw!'
+  }
+  else{
+  return 'Player 2 won!'
+  }
+}
+// other answer
+const rps = (p1, p2) => {
+  if (p1 === p2) return "Draw!";
+  var rules = {rock: "scissors", paper: "rock", scissors: "paper"};
+  if (p2 === rules[p1]) {
+    return "Player 1 won!";
+  }
+  else {
+    return "Player 2 won!";
+  }
+};
+// end
