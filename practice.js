@@ -125,3 +125,23 @@ const rps = (p1, p2) => {
   }
 };
 // end
+
+// Simple multiplication
+function simpleMultiplication(d){
+    if (d % 2 == 0){
+     return d * 8
+    }
+    else{
+     return d * 9
+    }
+}
+// other answer
+function simpleMultiplication(n){
+  return n % 2 == 0 ? n * 8 : n * 9
+}
+// other answer
+function simpleMultiplication(n) {
+    return n * (n % 2 ? 9 : 8);
+}
+// end
+
