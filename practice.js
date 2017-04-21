@@ -145,3 +145,13 @@ function simpleMultiplication(n) {
 }
 // end
 
+// Keep Hydrated
+function litres(time) {
+  return parseInt(time/2);
+}
+// other answer
+function litres(time) {
+  return Math.floor(time * 0.5);
+}
+// end
+
