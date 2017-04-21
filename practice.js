@@ -1,4 +1,5 @@
 // inverting arrays
+// WILL TAKE AN ARRAY SUCH AS [3,0,-2] AND RETURN THE ARRAY [-3,0,2]
 function invert(array) {
 for (i=0; i<array.length; i++){
   array[i] *= (-1);
@@ -11,12 +12,14 @@ for (i=0; i<array.length; i++){
 // end
 
 // string cleaning
+// WILL REMOVE ALL NUMBERS FROM A STRING, SO "GREAT34 TO ME46ET 1Y2O3U" WILL RETURN "GREAT TO MEET YOU"
 function stringClean(s){
    return s.replace(/[0-9]/g, '');
 }
 // end
 
 // difference of volumes of cuboids
+// WILL FIND THE DIFFERENCE IN THE VOLUMES OF TWO CUBOIDS, SO TWO ARRAYS [1,2,3] AND [2,4,6] WOULD HAVE VOLUMES 6 AND 48, AND THE FUNCTION WOULD RETURN THE DIFFERENCE BETWEEN THEM 42
 function find_difference(a, b) {
   var A = (a[0]*a[1]*a[2])
   var B = (b[0]*b[1]*b[2])
@@ -45,6 +48,7 @@ function basicOp(operation, value1, value2)
 //end
 
 // heads and legs
+// FINDS THE NUMBER OF COWS AND CHICKENS USING TOTAL NUMBER OF HEADS AND LEGS, SO 14 HEADS AND 48 LEGS WOULD RETURN 4 CHICKENS AND 10 COWS IN AN ARRAY [4,10]
 function animals(heads, legs){
   var Cows = ((legs/2)-heads);
   var Chickens = (heads - Cows);
@@ -75,6 +79,7 @@ function animals(heads, legs){
 // end
 
 // remove string spaces
+// REMOVES ALL SPACES FROM A STRING SO "HI I'M ROB" IS RETURNED AS "HII'MROB"
 function noSpace(x){
   return x.replace(/ /g,'')
 }
