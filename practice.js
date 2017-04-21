@@ -11,13 +11,6 @@ for (i=0; i<array.length; i++){
 }
 // end
 
-// string cleaning
-// WILL REMOVE ALL NUMBERS FROM A STRING, SO "GREAT34 TO ME46ET 1Y2O3U" WILL RETURN "GREAT TO MEET YOU"
-function stringClean(s){
-   return s.replace(/[0-9]/g, '');
-}
-// end
-
 // difference of volumes of cuboids
 // WILL FIND THE DIFFERENCE IN THE VOLUMES OF TWO CUBOIDS, SO TWO ARRAYS [1,2,3] AND [2,4,6] WOULD HAVE VOLUMES 6 AND 48, AND THE FUNCTION WOULD RETURN THE DIFFERENCE BETWEEN THEM 42
 function find_difference(a, b) {
@@ -84,6 +77,19 @@ function noSpace(x){
   return x.replace(/ /g,'')
 }
 //end
+
+// string cleaning
+// WILL REMOVE ALL NUMBERS FROM A STRING, SO "GREAT34 TO ME46ET 1Y2O3U" WILL RETURN "GREAT TO MEET YOU"
+function stringClean(s){
+   return s.replace(/[0-9]/g, '');
+}
+// end
+
+// Remove exclamation marks
+function removeExclamationMarks(s) {
+  return s.replace(/!/g, '');
+}
+// end
 
 // Enumerable Magic #1 - True for All?
 function all( arr, fun ) {
@@ -215,4 +221,32 @@ function squareOrSquareRoot(array) {
     return (r % 1 == 0) ? r : (x*x);
   });  
 }
+// end
+
+// Number of People in the Bus
+function minus(a, b) {
+    return a - b;
+}
+
+function getSum(total, num) {
+    return total + num;
+}
+
+var number = function(busStops){
+  for (i=0;i<busStops.length;i++){
+    busStops[i] = busStops[i].reduce(minus);
+  }
+  return busStops.reduce(getSum);
+}
+// other answer
+var number = function(busStops){
+  var totalPeople = 0;
+  for (var i=0; i<busStops.length; i++) {
+    totalPeople += busStops[i][0];
+    totalPeople -= busStops[i][1];
+  }
+  return totalPeople;
+}
+// other answer
+const number = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
 // end
