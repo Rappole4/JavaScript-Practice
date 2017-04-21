@@ -188,3 +188,26 @@ function formatMoney(amount){
   return '$'+amount.toFixed(2);
 }
 // end
+
+// To square(root) or not to square(root)
+function squareOrSquareRoot(array) {
+  var newarray = [];
+  for(i=0;i<array.length;i++){
+    var index = array[i];
+    if(Math.sqrt(index)%1==0){
+      newarray.push(Math.sqrt(index));
+    }
+    else{
+      newarray.push(index*index);
+    }
+  } 
+  return newarray;
+}
+// other answer
+function squareOrSquareRoot(array) {
+  return array.map(x => {
+    const r = Math.sqrt(x);
+    return (r % 1 == 0) ? r : (x*x);
+  });  
+}
+// end
