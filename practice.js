@@ -272,3 +272,19 @@ class Kata {
   }
 };
 // end
+
+// Convert boolean values to strings 'Yes' or 'No'
+function boolToWord( bool ){
+  if (bool==true){
+  return 'Yes'
+  }
+  else{
+  return 'No'
+  }
+}
+// other answer
+function boolToWord( bool ){
+  return bool ? 'Yes':'No';
+}
+// end
+
