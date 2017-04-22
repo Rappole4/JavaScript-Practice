@@ -249,4 +249,26 @@ var number = function(busStops){
 }
 // other answer
 const number = (busStops) => busStops.reduce((rem, [on, off]) => rem + on - off, 0);
+//call using number([[5,0],[4,0],[0,3]]); or some other size array and numbers
+// end
+
+// Volume of a Cuboid
+var Kata;
+
+Kata = (function() {
+  function Kata() {}
+
+  Kata.getVolumeOfCuboid = function(length, width, height) {
+    return length*width*height
+  };
+
+  return Kata;
+
+})();
+// other answer
+class Kata {
+  static getVolumeOfCuboid(l, w, h) {
+    return l * w * h;
+  }
+};
 // end
