@@ -312,3 +312,15 @@
 	  return next;
 	}
 	// end
+
+	// Statistics 101:Coin Sampling
+	function sample(coin) {
+	  var h = 0
+	  for (i = 0; i < 131313; i++){ 
+	    h += coin();
+	  }
+	  return h/131313;
+	}
+	// end
+
+	
