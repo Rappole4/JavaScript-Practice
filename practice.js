@@ -323,4 +323,17 @@
 	}
 	// end
 
+	// Simple Fun#182:Happy"g"
+	function gHappy(str) {
+	  for (i = 0; i < str.length; i++){
+	    if (str[i] == "g" && str[i-1] != "g" && str[i+1] != "g"){
+	      return false;
+	    }
+	  }
+	  return true;
+	}
+	// other answer
+	const gHappy = str => !/([^g]|^)g([^g]|$)/.test(str)
+	// end
+
 	
