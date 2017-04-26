@@ -325,6 +325,37 @@
 	}
 	// end
 
+	// Count of positives/sum of negatives
+	function plus(a, b) {
+	    return a + b;
+	}
+
+	function countPositivesSumNegatives(input) {
+	  var pos = [];
+	  var neg = [0];
+	  var newNeg = [0];
+	  var count = 0;
+	  if((input==0)||(input==[])||(input==null)){
+	    return [];
+	  }
+	  else{
+	    for (i=0;i<input.length;i++){
+	      if(input[i]>0){
+	        pos.push(count+i);
+	      }
+	      if(input[i]<0){
+	        neg.push(input[i]);
+	          newNeg = neg.reduce(plus);
+	      }
+	    }
+	    var length = [];
+	      length.push(pos.length);
+	    var both = length.concat(newNeg);
+	    return both;
+	  }
+	}
+	// end
+
 //7kyu
 	// Find all non-consecutive numbers
 	function allNonConsecutive (arr) {
