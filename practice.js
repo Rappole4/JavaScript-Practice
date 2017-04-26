@@ -92,6 +92,12 @@
 	}
 	// end
 
+	// Exclamation marks series #4: Remove all exclamation marks from sentence but ensure a exclamation mark at the end of string
+	function remove(s){
+	  return s.replace(/!/g, '')+'!';
+	}
+	// end
+
 	// Enumerable Magic #1 - True for All?
 	function all( arr, fun ) {
 	  for(i = 0; i < arr.length; i++) {
