@@ -300,6 +300,25 @@
 	  return String.fromCharCode(c);
 	}
 	// end
+
+	// Sum without highest and lowest number
+	function sumArray(array) {
+	  if ((array==[])||(array==null)||(array.lenth==1)){
+	    return 0;
+	  }
+	  else{
+	    var next = array.sort(function (a,b){return a-b});
+	    if((next==[])||(next==null)||(next.length<3)){
+	      return 0;
+	    }
+	    else{
+	      var more = next.reduce(function (c,d){return c+d});
+	      return (more - next[0])-next[next.length-1];
+	    }
+	  }
+	}
+	// end
+
 //7kyu
 	// Find all non-consecutive numbers
 	function allNonConsecutive (arr) {
@@ -334,6 +353,10 @@
 	}
 	// other answer
 	const gHappy = str => !/([^g]|^)g([^g]|$)/.test(str)
+	// other answer
+	function gHappy(str) {
+  		return !/(^|[^g])g($|[^g])/.test(str)
+	}
 	// end
 
 	
