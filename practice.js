@@ -396,4 +396,25 @@
 	}
 	// end
 
-	
+	// Sum of odd numbers
+	function add(a,b){
+	  return a + b;
+	}
+	function rowSumOddNumbers(n) {
+	  var next = []
+	  for(i=0;i<1000000;i++){
+	    if(i%2==1){
+	      next.push(i);
+	    }
+	  }
+	  for(j=1;j<n+1;j++){
+	  var arrays = [], size = j;
+	    arrays.push(next.splice(0, size).reduce(add));
+	  }
+	  return parseInt(arrays);
+	}
+	// other answer
+	function rowSumOddNumbers(n) {
+	  return Math.pow(n, 3);
+	}
+	// end
