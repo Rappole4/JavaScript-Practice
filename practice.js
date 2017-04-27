@@ -432,3 +432,36 @@
 	  return Math.pow(n, 3);
 	}
 	// end
+	
+	// Simple Fun #215:Properly Closed Bracket Word
+	function closedBracketWord(word) {
+	  var next = [];
+	  var twentySeven = [];
+	  var zero = [];
+	  for(i=0;i<word.length;i++){
+	    next.push(word[i].charCodeAt(0) - 96);
+	  }
+	  for(j=0;j<next.length;j++){
+	    twentySeven.push(next[j]+next[(next.length-j)-1]);
+	  }
+	  for(k=0;k<twentySeven.length;k++){
+	    if(twentySeven[k]%27==0){
+	      zero.push(twentySeven[k]%27);
+	    }
+	  }
+	  if(twentySeven.length==zero.length){
+	    return true;
+	  }
+	  else{
+	    return false;
+	  }
+	}
+	// other answers
+	function closedBracketWord(word) {
+	  if (word.length&1) return false;
+	  	for (var i=0;i<word.length>>1;i++) if(word.charCodeAt(i)+word.charCodeAt(word.length-i-1)!=219) return false;
+	  return true
+	}
+	// end
+	
+	
