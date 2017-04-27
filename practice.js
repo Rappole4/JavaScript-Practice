@@ -371,7 +371,7 @@
 
 	// Statistics 101:Coin Sampling
 	function sample(coin) {
-	  var h = 0
+	  var h = 0;
 	  for (i = 0; i < 131313; i++){ 
 	    h += coin();
 	  }
@@ -379,6 +379,20 @@
 	}
 	// end
 
+	// Square(n) Sum
+	function add(a,b){
+	  return a + b;
+	}
+
+	function squareSum(numbers){
+	  var next = [];
+	  for (i=0;i<numbers.length;i++){
+	    next.push(numbers[i]*numbers[i]);
+	  }
+	  return next.reduce(add);
+	}
+	//end
+	
 	// Simple Fun#182:Happy"g"
 	function gHappy(str) {
 	  for (i = 0; i < str.length; i++){
