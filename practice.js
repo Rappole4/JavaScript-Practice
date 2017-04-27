@@ -464,4 +464,26 @@
 	}
 	// end
 	
-	
+	// Most digits
+	function max(a,b){
+	  return Math.max(a,b);
+	}
+
+	function findLongest(array){
+	  var next = []
+	  var index = []
+	  for(i=0;i<array.length;i++){
+	    next.push(array[i].toString().length);
+	  }
+	  for(j=0;j<next.length;j++){
+	    if(next[j]==next.reduce(max)){
+	      return array[j]; 
+	    }
+	  }
+	}
+	// other answer
+	function findLongest(a) {
+	  let m = Math.max(...a);
+	  for (let i = 0; i < a.length; i++) if (m.toString().length == a[i].toString().length ) return a[i];
+	}
+	// end
