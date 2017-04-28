@@ -356,6 +356,23 @@
 	}
 	// end
 
+	// How good are you really?
+	function add(a,b){
+	  return a+b;
+	}
+
+	function betterThanAverage(classPoints, yourPoints) {
+	  sum=classPoints.reduce(add);
+	  avg = sum/classPoints.length;
+	  if((yourPoints==0)||(yourPoints<=avg)){
+	    return false;
+	  }
+	  else{
+	    return true;
+	  }
+	}
+	// end
+
 //7kyu
 	// Find all non-consecutive numbers
 	function allNonConsecutive (arr) {
@@ -465,6 +482,7 @@
 	// end
 	
 	// Most digits
+	// finds the integer(s) in an array with the most digits and returns the first of these integers
 	function max(a,b){
 	  return Math.max(a,b);
 	}
