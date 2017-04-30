@@ -523,3 +523,27 @@
 	  for (let i = 0; i < a.length; i++) if (m.toString().length == a[i].toString().length ) return a[i];
 	}
 	// end
+
+	// Simple Fun #223: Parameter Of Number
+	// find the LCM between the sum and product of a number
+	function gcd(a, b) {
+	  return !b ? a : gcd(b, a % b);
+	}
+
+	function lcm(a, b) {
+	  return (a * b) / gcd(a, b);   
+	}
+
+	function parameter(n) {
+	  var number = n.toString();
+	  var sum = 0;
+	  var product = 1;
+	  for (var i = 0; i < number.length; i++) {
+	    sum += parseInt(number.charAt(i), 10);
+	  }
+	  for (var j = 0; j < number.length; j++) {
+	    product *= parseInt(number.charAt(j), 10);
+	  }
+	  return lcm(sum,product);
+	}
+	// end
