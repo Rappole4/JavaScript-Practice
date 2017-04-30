@@ -377,6 +377,20 @@
 	}
 	// end
 
+	// Find the Remainder
+	function remainder(a, b){
+	  if((a==0)||(b==0)){
+	    return NaN;
+	  }
+	  else if(b>a){
+	    return (b%a);
+	  }
+	  else if(a>=b){
+	    return (a%b);
+	  }
+	}
+	//end
+
 //7kyu
 	// Find all non-consecutive numbers
 	function allNonConsecutive (arr) {
