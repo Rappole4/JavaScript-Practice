@@ -1,3 +1,30 @@
+// Interview question
+// Find the first 1,000 prime numbers.
+// A prime number is a whole number greater than 1, whose only two whole-number factors are 1 and itself.     
+function pri(n){
+  prime = [];
+  primes = [];
+  for (var counter = 0; counter <= n; counter++) {
+
+    var notPrime = false;
+    for (var i = 2; i <= counter; i++) {
+        if (counter%i===0 && i!==counter) {
+            notPrime = true;
+        }
+    }
+    if (notPrime === false) {
+        prime.push(counter);
+    }
+  }
+  for(j=0;j<prime.length;j++){
+    if(prime[j]!=0 && prime[j]!=1){
+      primes.push(prime[j]);
+    }
+  }
+  return primes;
+}
+pri(7919);//will get the first 1000 prime numbers
+
 //8kyu
 	// inverting arrays
 	// WILL TAKE AN ARRAY SUCH AS [3,0,-2] AND RETURN THE ARRAY [-3,0,2]
@@ -446,6 +473,8 @@
 	// end
 
 	// Sum of odd numbers
+	// took a number n and returned the sum of all odds
+	// n = 1 = 1, n = 2 = 3+5, n = 3 = 7+9+11, n = 4 = 13+15+17+19, ect.
 	function add(a,b){
 	  return a + b;
 	}
