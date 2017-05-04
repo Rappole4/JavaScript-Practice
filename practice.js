@@ -576,3 +576,33 @@ pri(7919);//will get the first 1000 prime numbers
 	  return lcm(sum,product);
 	}
 	// end
+
+	// Vowel Count
+	function getCount(str) {
+	  var vowelsCount = 0;
+	  for(i=0;i<str.length;i++){
+	    if((str[i]==='a')||(str[i]==='e')||(str[i]==='i')||(str[i]==='o')||(str[i]==='u')){
+	      vowelsCount += 1;
+	    }
+	  }
+	  return vowelsCount;
+	}
+	// other answer
+	function getCount(str) {
+	  var vowelsCount = 0;
+	  var vowels = ["a","e","i","o","u"];
+	  for(var i = 0;i < str.length;i++){
+	    for(var j=0;j<vowels.length;j++){
+	      if(str[i] === vowels[j]){
+	        vowelsCount++;
+	      }
+	    }
+	  }
+	  
+	  return vowelsCount;
+	}
+	// other answer
+	function getCount(str) {
+	  return (str.match(/[aeiou]/ig)||[]).length;
+	}
+	// end
