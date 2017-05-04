@@ -606,3 +606,15 @@ pri(7919);//will get the first 1000 prime numbers
 	  return (str.match(/[aeiou]/ig)||[]).length;
 	}
 	// end
+
+	//Jenny the youngest detective
+	//use the 3 number array to pick out the 3 letters from a string to make the secret word
+	function missingWord(nums, str) {
+	  var stri = str.replace(/ /g,'');
+	  var numbs = nums.sort(function (a,b){return a-b});
+	    if(numbs[2]>stri.length){
+	      return 'No mission today'
+	    }
+		  return (stri[numbs[0]]+stri[numbs[1]]+stri[numbs[2]]).toLowerCase();
+	}
+	//end
