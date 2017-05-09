@@ -607,8 +607,8 @@ pri(7919);//will get the first 1000 prime numbers
 	}
 	// end
 
-	//Jenny the youngest detective
-	//use the 3 number array to pick out the 3 letters from a string to make the secret word
+	// Jenny the youngest detective
+	// use the 3 number array to pick out the 3 letters from a string to make the secret word
 	function missingWord(nums, str) {
 	  var stri = str.replace(/ /g,'');
 	  var numbs = nums.sort(function (a,b){return a-b});
@@ -617,4 +617,31 @@ pri(7919);//will get the first 1000 prime numbers
 	    }
 		  return (stri[numbs[0]]+stri[numbs[1]]+stri[numbs[2]]).toLowerCase();
 	}
-	//end
+	// end
+
+	// Simple Fun #253:Cool String
+	function coolString(s) {
+	  var i=0;
+	  var character='';
+	  if((s.match(/[ ]/))||(s.match(/[1234567890]/))){
+	    return false;
+	  }
+	  while (i <= s.length){
+	    if (s.charAt(i) == s.charAt(i).toUpperCase()&&s.charAt(i+1) == s.charAt(i+1).toUpperCase()&&s.charAt(i+1)!=''&&s.charAt(i+1)!=' ') {
+	      return false;
+	    }
+	    if (s.charAt(i) == s.charAt(i).toLowerCase()&&s.charAt(i+1) == s.charAt(i+1).toLowerCase()&&s.charAt(i+1)!=''&&s.charAt(i+1)!=' ') {
+	      return false;
+	    }
+	    i++;
+	  }
+	  if(s.match(/[abcdefghijklmnopqrstuvwxyz]/ig)){
+	    return true;
+	  }
+	  return false;
+	}
+	// other answer
+	function coolString(s) {
+	  return !/[a-z]{2,}|[A-Z]{2,}|[^a-zA-Z]/.test(s)
+	}
+	// end
