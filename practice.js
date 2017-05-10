@@ -645,3 +645,28 @@ pri(7919);//will get the first 1000 prime numbers
 	  return !/[a-z]{2,}|[A-Z]{2,}|[^a-zA-Z]/.test(s)
 	}
 	// end
+
+// 6kyu
+	// Simple Fun #258: Is Divisible By 6
+	function isDivisibleBy6(s) {
+	  var num = [];
+	  var divi = [];
+	  var next = [];
+	  var sum = 0;
+	  for(i=0;i<10;i++){
+	    num.push(s.replace(/\*/g, [i]));
+	  }
+	  for(j=0;j<num.length;j++){
+	    if(num[j].length>15){
+	      if(((num[j].toString().substring(0,15)%6)+(num[j].toString().substring(15,num[j].length)))%6==0){
+	        divi.push(num[j]);
+	      }
+	    }
+	    else if(parseInt(num[j])%6==0){
+	      divi.push(num[j]);
+	    }
+	    
+	  }
+	  return divi;
+	}
+	// end
