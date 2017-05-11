@@ -648,25 +648,163 @@ pri(7919);//will get the first 1000 prime numbers
 
 // 6kyu
 	// Simple Fun #258: Is Divisible By 6
+	  function isDivisibleBy6(s) {
+		var num = [];                //an array with all possible s instead of one s with *
+		var divi = [];               //an array with all even s possibilities
+	  	var divi2 = [];              //an array with all numbers divisible by 6
+		var next = [];               //single array of divi[0]
+	  	var next1 = [];              //single array of divi[1]
+	  	var next2 = [];              //divi[2]
+	  	var next3 = [];              //divi[3]
+	  	var next4 = [];              //divi[4]
+	  	var next5 = [];              //divi[5]
+	  	var next6 = [];              //divi[6]
+	  	var next7 = [];              //divi[7]
+	  	var next8 = [];              //divi[8]
+	  	var next9 = [];              //divi[9]
+	  	var follow = 0;              //sum of divi[0] digits
+	  	var follow1 = 0;             //sum of divi[1] digits
+	  	var follow2 = 0;             //divi[2]
+	  	var follow3 = 0;             //divi[3]
+	  	var follow4 = 0;             //divi[4]
+	  	var follow5 = 0;             //divi[5]
+	  	var follow6 = 0;             //divi[6]
+	  	var follow7 = 0;             //divi[7]
+	  	var follow8 = 0;             //divi[8]
+	  	var follow9 = 0;             //divi[9]
+		for(i=0;i<10;i++){
+		  num.push(s.replace(/\*/g, [i]));
+		}
+		for(j=0;j<num.length;j++){
+		  if((num[j].toString().substring((num[j].length)-1,num[j].length))%2==0){
+		    divi.push(num[j]);
+		  }    
+		}
+	  if(divi.length>0){
+	    for(k=0;k<divi[0].length;k++){
+	      next.push((divi[0]).charAt(k));
+	    }
+	    for(kk=0;kk<next.length;kk++){
+	    follow += parseInt(next[kk]);
+	    }
+	    if(follow%3==0){
+	      divi2.push(divi[0]);
+	    }
+	  }
+	  if(divi.length>1){
+	    for(l=0;l<divi[1].length;l++){
+	      next1.push((divi[1]).charAt(l));
+	    }
+	    for(ll=0;ll<next1.length;ll++){
+	    follow1 += parseInt(next1[ll]);
+	    }
+	    if(follow1%3==0){
+	      divi2.push(divi[1]);
+	    }
+	  }
+	  if(divi.length>2){
+	    for(m=0;m<divi[2].length;m++){
+	      next2.push((divi[2]).charAt(m));
+	    }
+	    for(mm=0;mm<next2.length;mm++){
+	    follow2 += parseInt(next2[mm]);
+	    }
+	    if(follow2%3==0){
+	      divi2.push(divi[2]);
+	    }
+	  }
+	  if(divi.length>3){
+	    for(n=0;n<divi[3].length;n++){
+	      next3.push((divi[3]).charAt(n));
+	    }
+	    for(nn=0;nn<next3.length;nn++){
+	    follow3 += parseInt(next3[nn]);
+	    }
+	    if(follow3%3==0){
+	      divi2.push(divi[3]);
+	    }
+	  }
+	  if(divi.length>4){
+	    for(m=0;m<divi[4].length;m++){
+	      next4.push((divi[4]).charAt(m));
+	    }
+	    for(mm=0;mm<next4.length;mm++){
+	    follow4 += parseInt(next4[mm]);
+	    }
+	    if(follow4%3==0){
+	      divi2.push(divi[4]);
+	    }
+	  }
+	  if(divi.length>5){
+	    for(n=0;n<divi[5].length;n++){
+	      next5.push((divi[5]).charAt(n));
+	    }
+	    for(nn=0;nn<next5.length;nn++){
+	    follow5 += parseInt(next5[nn]);
+	    }
+	    if(follow5%3==0){
+	      divi2.push(divi[5]);
+	    }
+	  }
+	  if(divi.length>6){
+	    for(m=0;m<divi[6].length;m++){
+	      next6.push((divi[6]).charAt(m));
+	    }
+	    for(mm=0;mm<next6.length;mm++){
+	    follow6 += parseInt(next6[mm]);
+	    }
+	    if(follow6%3==0){
+	      divi2.push(divi[6]);
+	    }
+	  }
+	  if(divi.length>7){
+	    for(n=0;n<divi[7].length;n++){
+	      next7.push((divi[7]).charAt(n));
+	    }
+	    for(nn=0;nn<next7.length;nn++){
+	    follow7 += parseInt(next7[nn]);
+	    }
+	    if(follow7%3==0){
+	      divi2.push(divi[7]);
+	    }
+	  }
+	  if(divi.length>8){
+	    for(m=0;m<divi[8].length;m++){
+	      next8.push((divi[8]).charAt(m));
+	    }
+	    for(mm=0;mm<next8.length;mm++){
+	    follow8 += parseInt(next8[mm]);
+	    }
+	    if(follow8%3==0){
+	      divi2.push(divi[8]);
+	    }
+	  }
+	  if(divi.length>9){
+	    for(n=0;n<divi[9].length;n++){
+	      next9.push((divi[9]).charAt(n));
+	    }
+	    for(nn=0;nn<next9.length;nn++){
+	    follow9 += parseInt(next9[nn]);
+	    }
+	    if(follow9%3==0){
+	      divi2.push(divi[9]);
+	    }
+	  }
+	  return divi2;
+	}
+	// other answers
+	const isDivisibleBy6=s=>(r=>(r==1 ? [2,5,8] : r ? [1,4,7] : [0,3,6,9]).map(n=>s.replace(/\*/g,n)))([...s].reduce((a,b)=>b=='*' ? a : a+ +b,0)%3).filter(s=>!"13579".includes(s.slice(-1)));
+	// other answers
 	function isDivisibleBy6(s) {
-	  var num = [];
-	  var divi = [];
-	  var next = [];
-	  var sum = 0;
-	  for(i=0;i<10;i++){
-	    num.push(s.replace(/\*/g, [i]));
+	  if ( "13579".includes(s.slice(-1)) )
+	    return [];
+	  else {
+	    const plus = (v,w) => v+w ;
+	    const sum = [...s].map(Number).filter(Boolean).reduce(plus,0)%3;
+	    if ( s.slice(-1)==="*" )
+	      return [[0,6],[2,8],[4]][sum].map( v => s.replace( "*", String(v) ) );
+	    else
+	      return [[0,3,6,9],[2,5,8],[1,4,7]][sum].map( v => s.replace( "*", String(v) ) );
 	  }
-	  for(j=0;j<num.length;j++){
-	    if(num[j].length>15){
-	      if(((num[j].toString().substring(0,15)%6)+(num[j].toString().substring(15,num[j].length)))%6==0){
-	        divi.push(num[j]);
-	      }
-	    }
-	    else if(parseInt(num[j])%6==0){
-	      divi.push(num[j]);
-	    }
-	    
-	  }
-	  return divi;
 	}
 	// end
