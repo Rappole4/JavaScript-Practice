@@ -29,13 +29,20 @@ pri(7919);//will get the first 1000 prime numbers
 	// inverting arrays
 	// WILL TAKE AN ARRAY SUCH AS [3,0,-2] AND RETURN THE ARRAY [-3,0,2]
 	function invert(array) {
-	for (i=0; i<array.length; i++){
-	  array[i] *= (-1);
+	  var next = [];
+	  for (i=0; i<array.length; i++){
 	    if (array[i] == -0){
-	    array[i] = 0;
+	      next.push(0);
+	    }
+	    else{
+	      next.push(array[i]*-1);
 	    }
 	  }
-	   return array;
+	   return next;
+	}
+	// other answer
+	function invert(array) {
+	   return array.map(n => n && -n)
 	}
 	// end
 
@@ -806,5 +813,81 @@ pri(7919);//will get the first 1000 prime numbers
 	    else
 	      return [[0,3,6,9],[2,5,8],[1,4,7]][sum].map( v => s.replace( "*", String(v) ) );
 	  }
+	}
+	// end
+
+	// #6 Matrices: How Many Matrices Do These Elements Produce?
+	function factorial(n) {
+	  if (n === 0) {
+	    return 1;
+	  }
+	  return n * factorial(n - 1);
+	}
+
+	function countPerms(matrix) {
+	    var amountDiffMatrices;
+	    var mat = [];
+	    var count = 1;
+	    var ones = 0;
+	    var twos = 0;
+	    var threes = 0;
+	    var fours = 0;
+	    var fives = 0;
+	    var sixes = 0;
+	    var sevens = 0;
+	    var eights = 0;
+	    var nines = 0;
+	    var zeros = 0;
+	    for(i=0;i<matrix.length;i++){
+	      for(j=0;j<matrix[i].length;j++){
+	        mat.push(matrix[i][j]);
+	      }
+	    }
+	    for(k=1;k<mat.length+1;k++){
+	      count *= k;
+	    }
+	    for(k=0;k<mat.length;k++){
+	      if(mat[k]==1){
+	        ones += 1;
+	      }
+	      if(mat[k]==2){
+	        twos += 1;
+	      }
+	      if(mat[k]==3){
+	        threes += 1;
+	      }
+	      if(mat[k]==4){
+	        fours += 1;
+	      }
+	      if(mat[k]==5){
+	        fives += 1;
+	      }
+	      if(mat[k]==6){
+	        sixes += 1;
+	      }
+	      if(mat[k]==7){
+	        sevens += 1;
+	      }
+	      if(mat[k]==8){
+	        eights += 1;
+	      }
+	      if(mat[k]==9){
+	        nines += 1;
+	      }
+	      if(mat[k]==0){
+	        zeros += 1;
+	      }
+	    }
+	    return count/(factorial(ones)*factorial(twos)*factorial(threes)*factorial(fours)*factorial(fives)*factorial(sixes)*factorial(sevens)*factorial(eights)*factorial(nines)*factorial(zeros));
+	}
+	// other answer
+	function countPerms(a) {
+	  const fac = n => n ? n * fac(n-1) : 1 ;        // memoising isn't worth it
+	  a = [].concat(...a);                           // 1D is enough and makes calculations simpler
+	  const m = new Map( a.map( v => [ v, 0 ] ) );   // initialise unique values
+	  for ( const k of a ) m.set( k, m.get(k) + 1 ); // count occurrences per value
+	  var d = 1;                                     // multiplication neutral element for divisor
+	  m.forEach( v => d *= fac(v) );                 // calculate product of factorials
+	  return fac(a.length) / d;                      // calculate and return number of permutations
 	}
 	// end
