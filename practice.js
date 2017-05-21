@@ -891,3 +891,29 @@ pri(7919);//will get the first 1000 prime numbers
 	  return fac(a.length) / d;                      // calculate and return number of permutations
 	}
 	// end
+
+	// Simple Fun #231: Kth Divisor
+	function kthDivisor(n, k) {
+	  var divisors = [];
+	  var counter = 0;
+	  if(n){
+	    for(i=1; i<=n/4; i++){
+	      if((n/i==Math.floor(n/i))&&(counter<k+1)){
+	        counter += 1;
+	        divisors.push(i);
+	      }
+	    }
+	    if(n%3==0){
+	      divisors.push(n/3);
+	    }
+	    if(n%2==0){
+	      divisors.push(n/2);
+	    }
+	    divisors.push(n);
+	  }
+	  if(divisors[k-1]==undefined){
+	    return -1;
+	  }
+	  return divisors[k-1];
+	}
+	// end
