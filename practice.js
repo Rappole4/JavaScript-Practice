@@ -917,3 +917,366 @@ pri(7919);//will get the first 1000 prime numbers
 	  return divisors[k-1];
 	}
 	// end
+
+	// Fruit Machine
+	function fruit(reels, spins){
+	  var reel1 = [];
+	  var reel2 = [];
+	  var reel3 = [];
+	  reel1.push(reels.toString().split(',')[0],reels.toString().split(',')[1],reels.toString().split(',')[2],reels.toString().split(',')[3],reels.toString().split(',')[4],reels.toString().split(',')[5],reels.toString().split(',')[6],reels.toString().split(',')[7],reels.toString().split(',')[8],reels.toString().split(',')[9]);
+	  reel2.push(reels.toString().split(',')[10],reels.toString().split(',')[11],reels.toString().split(',')[12],reels.toString().split(',')[13],reels.toString().split(',')[14],reels.toString().split(',')[15],reels.toString().split(',')[16],reels.toString().split(',')[17],reels.toString().split(',')[18],reels.toString().split(',')[19]);
+	  reel3.push(reels.toString().split(',')[20],reels.toString().split(',')[21],reels.toString().split(',')[22],reels.toString().split(',')[23],reels.toString().split(',')[24],reels.toString().split(',')[25],reels.toString().split(',')[26],reels.toString().split(',')[27],reels.toString().split(',')[28],reels.toString().split(',')[29]);
+	  // giving each card a score
+	  if(reel1[spins[0]]=="Wild"){
+	    reel1[spins[0]] = 10;
+	  }
+	  if(reel2[spins[1]]=="Wild"){
+	    reel2[spins[1]] = 10;
+	  }
+	  if(reel3[spins[2]]=="Wild"){
+	    reel3[spins[2]] = 10;
+	  }
+	  if(reel1[spins[0]]=="Star"){
+	    reel1[spins[0]] = 9;
+	  }
+	  if(reel2[spins[1]]=="Star"){
+	    reel2[spins[1]] = 9;
+	  }
+	  if(reel3[spins[2]]=="Star"){
+	    reel3[spins[2]] = 9;
+	  }
+	  if(reel1[spins[0]]=="Bell"){
+	    reel1[spins[0]] = 8;
+	  }
+	  if(reel2[spins[1]]=="Bell"){
+	    reel2[spins[1]] = 8;
+	  }
+	  if(reel3[spins[2]]=="Bell"){
+	    reel3[spins[2]] = 8;
+	  }
+	  if(reel1[spins[0]]=="Shell"){
+	    reel1[spins[0]] = 7;
+	  }
+	  if(reel2[spins[1]]=="Shell"){
+	    reel2[spins[1]] = 7;
+	  }
+	  if(reel3[spins[2]]=="Shell"){
+	    reel3[spins[2]] = 7;
+	  }
+	  if(reel1[spins[0]]=="Seven"){
+	    reel1[spins[0]] = 6;
+	  }
+	  if(reel2[spins[1]]=="Seven"){
+	    reel2[spins[1]] = 6;
+	  }
+	  if(reel3[spins[2]]=="Seven"){
+	    reel3[spins[2]] = 6;
+	  }
+	  if(reel1[spins[0]]=="Cherry"){
+	    reel1[spins[0]] = 5;
+	  }
+	  if(reel2[spins[1]]=="Cherry"){
+	    reel2[spins[1]] = 5;
+	  }
+	  if(reel3[spins[2]]=="Cherry"){
+	    reel3[spins[2]] = 5;
+	  }
+	  if(reel1[spins[0]]=="Bar"){
+	    reel1[spins[0]] = 4;
+	  }
+	  if(reel2[spins[1]]=="Bar"){
+	    reel2[spins[1]] = 4;
+	  }
+	  if(reel3[spins[2]]=="Bar"){
+	    reel3[spins[2]] = 4;
+	  }
+	  if(reel1[spins[0]]=="King"){
+	    reel1[spins[0]] = 3;
+	  }
+	  if(reel2[spins[1]]=="King"){
+	    reel2[spins[1]] = 3;
+	  }
+	  if(reel3[spins[2]]=="King"){
+	    reel3[spins[2]] = 3;
+	  }
+	  if(reel1[spins[0]]=="Queen"){
+	    reel1[spins[0]] = 2;
+	  }
+	  if(reel2[spins[1]]=="Queen"){
+	    reel2[spins[1]] = 2;
+	  }
+	  if(reel3[spins[2]]=="Queen"){
+	    reel3[spins[2]] = 2;
+	  }
+	  if(reel1[spins[0]]=="Jack"){
+	    reel1[spins[0]] = 1;
+	  }
+	  if(reel2[spins[1]]=="Jack"){
+	    reel2[spins[1]] = 1;
+	  }
+	  if(reel3[spins[2]]=="Jack"){
+	    reel3[spins[2]] = 1;
+	  }
+	  // getting score for all the same
+	  if((reel1[spins[0]]==reel2[spins[1]])&&(reel2[spins[1]]==reel3[spins[2]])){
+	    return 10*(reel1[spins[0]]);
+	  }
+    // 2 wilds
+    var countW = 0;
+    if(reel1[spins[0]]==10){
+      countW += 1;
+    }
+    if(reel2[spins[1]]==10){
+      countW += 1;
+    }
+    if(reel3[spins[2]]==10){
+      countW += 1;
+    }
+    if(countW == 2){
+      return 10;
+    }
+	  // getting score for 2 the same with and without a wild
+	  else if((reel1[spins[0]]==reel2[spins[1]])||(reel1[spins[0]]==reel3[spins[2]])){
+	    if((reel2[spins[1]]==10)||(reel3[spins[2]]==10)){
+	      return (2*reel1[spins[0]]);
+	    }
+	    return (reel1[spins[0]]);
+	  }
+	  else if((reel3[spins[2]]==reel2[spins[1]])||(reel1[spins[0]]==reel3[spins[2]])){
+	    if((reel2[spins[1]]==10)||(reel1[spins[0]]==10)){
+	      return (2*reel3[spins[2]]);
+	    }
+	    return (reel3[spins[2]]);
+	  }
+	  else if((reel1[spins[0]]==reel2[spins[1]])||(reel2[spins[1]]==reel3[spins[2]])){
+	    if((reel1[spins[0]]==10)||(reel3[spins[2]]==10)){
+	      return (2*reel2[spins[1]]);
+	    }
+	    return (reel2[spins[1]]);
+	  }
+	  // getting score for no matches
+	  return 0;
+	}
+	// other answer
+	function fruit(reels, spins){
+	  var r1 = [];
+	  var r2 = [];
+	  var r3 = [];
+	  var s1 = [];
+	  var s2 = [];
+	  var s3 = [];
+	  var countW = 0;
+	  var countS = 0;
+	  var countBe = 0;
+	  var countSh = 0;
+	  var countSe = 0;
+	  var countC = 0;
+	  var countBa = 0;
+	  var countK = 0;
+	  var countQ = 0;
+	  var countJ = 0;
+	  // sorting things out
+	  r1.push(reels.toString().split(',')[0],reels.toString().split(',')[1],reels.toString().split(',')[2],reels.toString().split(',')[3],reels.toString().split(',')[4],reels.toString().split(',')[5],reels.toString().split(',')[6],reels.toString().split(',')[7],reels.toString().split(',')[8],reels.toString().split(',')[9]);
+	  r2.push(reels.toString().split(',')[10],reels.toString().split(',')[11],reels.toString().split(',')[12],reels.toString().split(',')[13],reels.toString().split(',')[14],reels.toString().split(',')[15],reels.toString().split(',')[16],reels.toString().split(',')[17],reels.toString().split(',')[18],reels.toString().split(',')[19]);
+	  r3.push(reels.toString().split(',')[20],reels.toString().split(',')[21],reels.toString().split(',')[22],reels.toString().split(',')[23],reels.toString().split(',')[24],reels.toString().split(',')[25],reels.toString().split(',')[26],reels.toString().split(',')[27],reels.toString().split(',')[28],reels.toString().split(',')[29]);
+	  s1.push(spins[0]);
+	  s2.push(spins[1]);
+	  s3.push(spins[2]);
+	  // counting number of each spun
+	  if(r1[s1]=="Wild"){
+	    countW += 1;
+	  }
+	  if(r2[s2]=="Wild"){
+	    countW += 1;
+	  }
+	  if(r3[s3]=="Wild"){
+	    countW += 1;
+	  }
+	  if(r1[s1]=="Star"){
+	    countS += 1;
+	  }
+	  if(r2[s2]=="Star"){
+	    countS += 1;
+	  }
+	  if(r3[s3]=="Star"){
+	    countS += 1;
+	  }
+	  if(r1[s1]=="Bell"){
+	    countBe += 1;
+	  }
+	  if(r2[s2]=="Bell"){
+	    countBe += 1;
+	  }
+	  if(r3[s3]=="Bell"){
+	    countBe += 1;
+	  }
+	  if(r1[s1]=="Shell"){
+	    countSh += 1;
+	  }
+	  if(r2[s2]=="Shell"){
+	    countSh += 1;
+	  }
+	  if(r3[s3]=="Shell"){
+	    countSh += 1;
+	  }
+	  if(r1[s1]=="Seven"){
+	    countSe += 1;
+	  }
+	  if(r2[s2]=="Seven"){
+	    countSe += 1;
+	  }
+	  if(r3[s3]=="Seven"){
+	    countSe += 1;
+	  }
+	  if(r1[s1]=="Cherry"){
+	    countC += 1;
+	  }
+	  if(r2[s2]=="Cherry"){
+	    countC += 1;
+	  }
+	  if(r3[s3]=="Cherry"){
+	    countC += 1;
+	  }
+	  if(r1[s1]=="Bar"){
+	    countBa += 1;
+	  }
+	  if(r2[s2]=="Bar"){
+	    countBa += 1;
+	  }
+	  if(r3[s3]=="Bar"){
+	    countBa += 1;
+	  }
+	  if(r1[s1]=="King"){
+	    countK += 1;
+	  }
+	  if(r2[s2]=="King"){
+	    countK += 1;
+	  }
+	  if(r3[s3]=="King"){
+	    countK += 1;
+	  }
+	  if(r1[s1]=="Queen"){
+	    countQ += 1;
+	  }
+	  if(r2[s2]=="Queen"){
+	    countQ += 1;
+	  }
+	  if(r3[s3]=="Queen"){
+	    countQ += 1;
+	  }
+	  if(r1[s1]=="Jack"){
+	    countJ += 1;
+	  }
+	  if(r2[s2]=="Jack"){
+	    countJ += 1;
+	  }
+	  if(r3[s3]=="Jack"){
+	    countJ += 1;
+	  }
+	  // getting score
+	  if(countW == 2){
+	    return 10;
+	  }
+	  else if(countW == 3){
+	    return 10*10;
+	  }
+	  if((countS == 2)&&(countW ==1)){
+	    return 2*9;
+	  }
+	  else if(countS == 2){
+	    return 9;
+	  }
+	  else if(countS == 3){
+	    return 10*9;
+	  }
+	  if((countBe == 2)&&(countW ==1)){
+	    return 2*8;
+	  }
+	  else if(countBe == 2){
+	    return 8;
+	  }
+	  else if(countBe == 3){
+	    return 10*8;
+	  }
+	  if((countSh == 2)&&(countW ==1)){
+	    return 2*7;
+	  }
+	  else if(countSh == 2){
+	    return 7;
+	  }
+	  else if(countSh == 3){
+	    return 10*7;
+	  }
+	  if((countSe == 2)&&(countW ==1)){
+	    return 2*6;
+	  }
+	  else if(countSe == 2){
+	    return 6;
+	  }
+	  else if(countSe == 3){
+	    return 10*6;
+	  }
+	  if((countC == 2)&&(countW ==1)){
+	    return 2*5;
+	  }
+	  else if(countC == 2){
+	    return 5;
+	  }
+	  else if(countC == 3){
+	    return 10*5;
+	  }
+	  if((countBa == 2)&&(countW ==1)){
+	    return 2*4;
+	  }
+	  else if(countBa == 2){
+	    return 4;
+	  }
+	  else if(countBa == 3){
+	    return 10*4;
+	  }
+	  if((countK == 2)&&(countW ==1)){
+	    return 2*3;
+	  }
+	  else if(countK == 2){
+	    return 3;
+	  }
+	  else if(countK == 3){
+	    return 10*3;
+	  }
+	  if((countQ == 2)&&(countW ==1)){
+	    return 2*2;
+	  }
+	  else if(countQ == 2){
+	    return 2;
+	  }
+	  else if(countQ == 3){
+	    return 10*2;
+	  }
+	  if((countJ == 2)&&(countW ==1)){
+	    return 2*1;
+	  }
+	  else if(countJ == 2){
+	    return 1;
+	  }
+	  else if(countJ == 3){
+	    return 10*1;
+	  }
+	  return 0;
+	}
+	// other answer
+	function fruit(reels, spins) {
+	  let map = ['Jack', 'Queen', 'King', 'Bar', 'Cherry', 'Seven', 'Shell', 'Bell', 'Star', 'Wild'];
+	  
+	  let [a, b, c] = reels
+	    .map((reel, i) => map.indexOf(reel[spins[i]]) + 1)
+	    .sort((a, b) => a - b);
+
+	  if (a === b && b === c)
+	    return a * 10;
+	    
+	  if (a === b)
+	    return c === 10 ? a * 2 : a;
+	  
+	  return b === c ? b : 0;
+	}
+	// end
