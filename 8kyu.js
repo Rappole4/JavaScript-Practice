@@ -435,3 +435,29 @@ pri(7919);//will get the first 1000 prime numbers
 	  }
 	}
 	//end
+	
+	// How old will I be in 2099?
+	function  calculateAge(birth,year) {
+	  var diff = year - birth;
+	  var other = birth - year;
+	  if(diff==1){
+	    return ("You are "+diff+" year old.");
+	  }
+	  else if(other==1){
+	    return ("You will be born in "+other+" year.");
+	  }
+	  else if(diff>0){
+	    return ("You are "+diff+" years old.");
+	  }
+	  else if(diff<0){
+	    return ("You will be born in "+other+" years.");
+	  }
+	  return ("You were born this very year!");
+	}
+	// other answer
+	function  calculateAge(a,b) {
+	  return a>b?`You will be born in ${a-b} year${a-b==1?"":"s"}.`:
+	         a<b?`You are ${b-a} year${b-a==1?"":"s"} old.`:
+	         `You were born this very year!`
+	}
+	// end

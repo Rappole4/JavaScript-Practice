@@ -77,6 +77,22 @@
 	}
 	// end
 	
+	// Sum of all the multiple of 3 or 5
+	function findSum(n) {
+	  var mul3 = 0;
+	  var mul5 = 0;
+	  for(i=1;i<n+1;i++){
+	    if(i%3==0){
+	      mul3 += i;
+	    }
+	    if((i%5==0)&&(i%3!==0)){
+	      mul5 += i;
+	    }
+	  }
+	  return mul3+mul5;
+	}
+	// end
+	
 	// Simple Fun #215:Properly Closed Bracket Word
 	function closedBracketWord(word) {
 	  var next = [];
