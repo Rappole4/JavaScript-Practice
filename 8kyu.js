@@ -86,6 +86,44 @@ pri(7919);//will get the first 1000 prime numbers
 	}
 	//end
 
+	// Welcome!
+	// make a database that takes a language and returns welcome in that language
+	function greet(language) {
+	  var lang = ['english','czech','danish','dutch','estonian','finnish','flemish','french','german','irish','italian','latvian','lithuanian','polish','spanish','swedish','welsh']
+	  var welc = ['Welcome','Vitejte','Velkomst','Welkom','Tere tulemast','Tervetuloa','Welgekomen','Bienvenue','Willkommen','Failte','Benvenuto','Gaidits','Laukiamas','Witamy','Bienvenido','Valkommen','Croeso']
+	  for(i=0;i<lang.length;i++){
+	    if(language==lang[i]){
+	      return welc[i];
+	    }
+	  }
+	  return welc[0];
+	}
+	//other answer
+	var database = {
+		english: 'Welcome',
+		czech: 'Vitejte',
+		danish: 'Velkomst',
+		dutch: 'Welkom',
+		estonian: 'Tere tulemast',
+		finnish: 'Tervetuloa',
+		flemish: 'Welgekomen',
+		french: 'Bienvenue',
+		german: 'Willkommen',
+		irish: 'Failte',
+		italian: 'Benvenuto',
+		latvian: 'Gaidits',
+		lithuanian: 'Laukiamas',
+		polish: 'Witamy',
+		spanish: 'Bienvenido',
+		swedish: 'Valkommen',
+		welsh: 'Croeso'
+		}
+
+	function greet(language) {
+	return database[language] || "Welcome";
+	}
+	// end
+
 	// heads and legs
 	// FINDS THE NUMBER OF COWS AND CHICKENS USING TOTAL NUMBER OF HEADS AND LEGS, SO 14 HEADS AND 48 LEGS WOULD RETURN 4 CHICKENS AND 10 COWS IN AN ARRAY [4,10]
 	function animals(heads, legs){
