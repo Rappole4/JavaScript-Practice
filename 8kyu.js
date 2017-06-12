@@ -160,7 +160,16 @@ pri(7919);//will get the first 1000 prime numbers
 	function noSpace(x){
 	  return x.replace(/ /g,'')
 	}
-	//end
+	// end
+
+	// DuckDuckGoose
+	// IMPORTANT class object lesson
+	function duckDuckGoose(players, goose) {
+	  var whole = [];
+	  whole.push(players[(goose-1)%(players.length)]);
+	  return whole[0].name;
+	}
+	// end
 
 	// string cleaning
 	// WILL REMOVE ALL NUMBERS FROM A STRING, SO "GREAT34 TO ME46ET 1Y2O3U" WILL RETURN "GREAT TO MEET YOU"
