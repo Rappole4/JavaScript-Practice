@@ -418,93 +418,11 @@ pri(7919);//will get the first 1000 prime numbers
 	// end
 
 	// Count of positives/sum of negatives
-	function plus(a, b) {
-	    return a + b;
-	}
-
-	function countPositivesSumNegatives(input) {
-	  var pos = [];
-	  var neg = [0];
-	  var newNeg = [0];
-	  var count = 0;
-	  if((input==0)||(input==[])||(input==null)){
-	    return [];
-	  }
-	  else{
-	    for (i=0;i<input.length;i++){
-	      if(input[i]>0){
-	        pos.push(count+i);
-	      }
-	      if(input[i]<0){
-	        neg.push(input[i]);
-	          newNeg = neg.reduce(plus);
-	      }
-	    }
-	    var length = [];
-	      length.push(pos.length);
-	    var both = length.concat(newNeg);
-	    return both;
-	  }
-	}
-	// end
 
 	// How good are you really?
-	function add(a,b){
-	  return a+b;
-	}
-
-	function betterThanAverage(classPoints, yourPoints) {
-	  sum=classPoints.reduce(add);
-	  avg = sum/classPoints.length;
-	  if((yourPoints==0)||(yourPoints<=avg)){
-	    return false;
-	  }
-	  else{
-	    return true;
-	  }
-	}
-	// other answer
-	function betterThanAverage(classPoints, yourPoints) {
-	  return yourPoints > classPoints.reduce((a, b) => a + b, 0) / classPoints.length; 
-	}
-	// end
 
 	// Find the Remainder
-	function remainder(a, b){
-	  if((a==0)||(b==0)){
-	    return NaN;
-	  }
-	  else if(b>a){
-	    return (b%a);
-	  }
-	  else if(a>=b){
-	    return (a%b);
-	  }
-	}
-	//end
 	
 	// How old will I be in 2099?
-	function  calculateAge(birth,year) {
-	  var diff = year - birth;
-	  var other = birth - year;
-	  if(diff==1){
-	    return ("You are "+diff+" year old.");
-	  }
-	  else if(other==1){
-	    return ("You will be born in "+other+" year.");
-	  }
-	  else if(diff>0){
-	    return ("You are "+diff+" years old.");
-	  }
-	  else if(diff<0){
-	    return ("You will be born in "+other+" years.");
-	  }
-	  return ("You were born this very year!");
-	}
-	// other answer
-	function  calculateAge(a,b) {
-	  return a>b?`You will be born in ${a-b} year${a-b==1?"":"s"}.`:
-	         a<b?`You are ${b-a} year${b-a==1?"":"s"} old.`:
-	         `You were born this very year!`
-	}
-	// end
+
+	// Parse nice int from char problem
