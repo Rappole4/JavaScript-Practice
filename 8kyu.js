@@ -351,71 +351,17 @@ pri(7919);//will get the first 1000 prime numbers
 	//call using number([[5,0],[4,0],[0,3]]); or some other size array and numbers
 	// end
 
+// Other 8kyu solved
+
 	// Volume of a Cuboid
-	var Kata;
-
-	Kata = (function() {
-	  function Kata() {}
-
-	  Kata.getVolumeOfCuboid = function(length, width, height) {
-	    return length*width*height
-	  };
-
-	  return Kata;
-
-	})();
-	// other answer
-	class Kata {
-	  static getVolumeOfCuboid(l, w, h) {
-	    return l * w * h;
-	  }
-	};
-	// end
 
 	// Convert boolean values to strings 'Yes' or 'No'
-	function boolToWord( bool ){
-	  if (bool==true){
-	  return 'Yes'
-	  }
-	  else{
-	  return 'No'
-	  }
-	}
-	// other answer
-	function boolToWord( bool ){
-	  return bool ? 'Yes':'No';
-	}
-	// end
 
 	// Simple Fun #1:Seats in Theater
-	function seatsInTheater(nCols, nRows, col, row) {
-	  return (nCols-col+1)*(nRows-row); 
-	}
-	// end
 
-	// get character from ASCII Value
-	function getChar(c){
-	  return String.fromCharCode(c);
-	}
-	// end
+	// Get character from ASCII Value
 
 	// Sum without highest and lowest number
-	function sumArray(array) {
-	  if ((array==[])||(array==null)||(array.lenth==1)){
-	    return 0;
-	  }
-	  else{
-	    var next = array.sort(function (a,b){return a-b});
-	    if((next==[])||(next==null)||(next.length<3)){
-	      return 0;
-	    }
-	    else{
-	      var more = next.reduce(function (c,d){return c+d});
-	      return (more - next[0])-next[next.length-1];
-	    }
-	  }
-	}
-	// end
 
 	// Count of positives/sum of negatives
 
@@ -426,3 +372,5 @@ pri(7919);//will get the first 1000 prime numbers
 	// How old will I be in 2099?
 
 	// Parse nice int from char problem
+
+	// Simple Fun #261: Whose Move
