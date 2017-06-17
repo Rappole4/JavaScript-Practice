@@ -1,4 +1,19 @@
 //7kyu
+	// Partial Word Searching
+	function wordSearch(query, seq){
+	  var next = [];
+	  for(i=0;i<seq.length;i++){
+	    if((seq[i].toLowerCase()).includes(query.toLowerCase())){
+	      next.push(seq[i]);
+	    }
+	  }
+	  if(next[0]==undefined){
+	    next.push('Empty');
+	  }
+	  return next;
+	}
+	// end
+	
 	// Find all non-consecutive numbers
 	function allNonConsecutive (arr) {
 	  var next = [];
