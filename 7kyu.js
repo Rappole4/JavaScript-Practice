@@ -260,3 +260,5 @@
 // Other 7kyu Solved
 
 	// Count all the sheep on farm in the heights of New Zealand
+
+	// Turn any word into a beef taco
