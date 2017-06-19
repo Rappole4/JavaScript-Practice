@@ -256,3 +256,7 @@
 	  return !/[a-z]{2,}|[A-Z]{2,}|[^a-zA-Z]/.test(s)
 	}
 	// end
+
+// Other 7kyu Solved
+
+	// Count all the sheep on farm in the heights of New Zealand
