@@ -268,3 +268,5 @@
 	// Simple Fun #320: Scratch lottery I
 
 	// Return the first M multiples of N
+
+	// Simple Fun #324: Is John Lying
