@@ -264,3 +264,7 @@
 	// Turn any word into a beef taco
 
 	// Sectional Array Sort
+
+	// Simple Fun #320: Scratch lottery I
+
+	// Return the first M multiples of N
